@@ -3,12 +3,6 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
-    applicationVariants.all { variant ->
-        variant.outputs.all {
-            def fileName = "Scene" + "_${defaultConfig.versionName}_${defaultConfig.versionCode}_" + variant.name + ".apk"
-            outputFileName = fileName
-        }
-    }
     dataBinding {
         enabled =true
     }
@@ -39,6 +33,14 @@ android {
             abiFilters "armeabi-v7a", "arm64-v8a"
         }
     }
+
+    applicationVariants.all { variant ->
+        variant.outputs.all {
+            def fileName = "Scene" + "_${defaultConfig.versionName}_${defaultConfig.versionCode}_" + variant.name + ".apk"
+            outputFileName = fileName
+        }
+    }
+
     buildTypes {
         release {
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
@@ -47,20 +49,20 @@ android {
             jniDebuggable = false
             signingConfig signingConfigs.omarea_Signing
         }
-        // release_mini {
-        //     shrinkResources true
-        //     zipAlignEnabled true
-        //     proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
-        //     minifyEnabled true
-        //     debuggable false
-        //     jniDebuggable = false
-        // }
-        // debug {
-            // signingConfig signingConfigs.omarea_Signing
-        //     minifyEnabled false
-        //     debuggable true
-        //     jniDebuggable = false
-        // }
+        release_mini {
+            shrinkResources true
+            zipAlignEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            minifyEnabled true
+            debuggable false
+            jniDebuggable = false
+        }
+        debug {
+            signingConfig signingConfigs.omarea_Signing
+            minifyEnabled false
+            debuggable true
+            jniDebuggable = false
+        }
     }
     productFlavors {
     }

@@ -29,12 +29,15 @@ jobs:
       run: chmod +x gradlew
 
     - name: Build with Gradle
-      run: ./gradlew build
-      # run: ./gradlew assembleRelease
+      run: |
+        ./gradlew assembleRelease
+      # ./gradlew build
 
     - id: tag
       run: |
-        echo "::set-output name=release_tag::$(date +"%Y.%m.%d_%H-%M")"
+        tag=$(date +"v%Y-%m-%d-%H-%M")
+        echo "Generated release tag: $tag"
+        echo "::set-output name=release_tag::$tag"
 
     - id: print_apk_path
       run: |  
