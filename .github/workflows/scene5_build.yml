@@ -1,4 +1,4 @@
-name: Android CI(Scene5) v2
+name: Android CI(Scene5)
 
 on: workflow_dispatch
 
