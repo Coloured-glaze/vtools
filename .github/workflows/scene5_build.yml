@@ -15,7 +15,7 @@ jobs:
     - uses: nttld/setup-ndk@v1
       id: setup-ndk
       with:
-        ndk-version: r23b
+        ndk-version: r24
         add-to-path: true
 
     - name: set up JDK 11
