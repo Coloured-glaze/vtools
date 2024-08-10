@@ -29,7 +29,7 @@ class FloatMonitorThreads(private val mContext: Context) {
 
     private var view: View = LayoutInflater.from(mContext).inflate(R.layout.fw_threads, null)
     private var textView: TextView = view.findViewById(R.id.fw_logs)
-    private val processUtils = ProcessUtilsSimple(Scene.context)
+    private val processUtils = ProcessUtilsSimple()
     private val handle = Handler(Looper.getMainLooper())
 
     val supported: Boolean
