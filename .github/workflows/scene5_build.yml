@@ -30,7 +30,7 @@ jobs:
 
     - name: Build with Gradle
       run: |
-        ./gradlew assembleRelease
+        ./gradlew assembleRelease --info --warning-mode all
       # ./gradlew build
 
     - id: tag

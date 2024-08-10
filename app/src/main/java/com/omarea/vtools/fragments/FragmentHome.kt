@@ -230,7 +230,7 @@ class FragmentHome : androidx.fragment.app.Fragment() {
     private lateinit var batteryManager: BatteryManager
     private lateinit var activityManager: ActivityManager
     private val platformUtils = PlatformUtils()
-    private val processUtils = ProcessUtilsSimple()
+    private val processUtils = ProcessUtilsSimple(Scene.context)
 
     private var minFreqList = HashMap<Int, String>()
     private var maxFreqList = HashMap<Int, String>()

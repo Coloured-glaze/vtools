@@ -12,7 +12,7 @@ import android.widget.ImageButton
 import android.widget.ListView
 import android.widget.TextView
 import android.widget.Toast
-// import com.omarea.Scene
+import com.omarea.Scene
 import com.omarea.library.shell.ProcessUtilsSimple
 import com.omarea.ui.AdapterProcessMini
 import com.omarea.vtools.R
@@ -135,7 +135,7 @@ class FloatTaskManager(private val context: Context) {
     }
 
     private val handle = Handler(Looper.getMainLooper())
-    private val processUtils = ProcessUtilsSimple()
+    private val processUtils = ProcessUtilsSimple(Scene.context)
 
     // 更新任务列表
     private fun updateData() {
