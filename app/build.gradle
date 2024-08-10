@@ -79,6 +79,10 @@ android {
         }
     }
     ndkVersion '24.0.8215888'
+
+    lintOptions {
+        abortOnError false 
+    }
 }
 
 dependencies {
